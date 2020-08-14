@@ -38,7 +38,7 @@ else:
 
 myMessageSection = pymsteams.cardsection()
 
-myTeamsMessage.title(f'''{REPOSITORY}''')
+myTeamsMessage.title(f'''{REPOSITORY_NAME}''')
 
 myTeamsMessage.addSection(myMessageSection)
 # Activity Elements
