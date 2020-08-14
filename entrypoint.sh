@@ -42,7 +42,7 @@ myTeamsMessage.title(f'''{REPOSITORY_NAME}''')
 myTeamsMessage.addSection(myMessageSection)
 # Activity Elements
 myMessageSection.activityTitle("On branch: "+BRANCH)
-myMessageSection.activitySubtitle("Triggered by: ACTOR")
+myMessageSection.activitySubtitle("Triggered by: "+ACTOR)
 myMessageSection.activityImage("https://github.com/"+ACTOR+".png")
 myMessageSection.activityText(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
