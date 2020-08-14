@@ -48,8 +48,8 @@ myMessageSection.activityText(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 # Facts are key value pairs displayed in a list.
 myMessageSection.addFact("Status:", r"<strong style='color: {color};'>{CI_STATUS.upper() if CI_STATUS else ''}</strong>")
-myMessageSection.addFact("Job:", "{JOB_NAME}")
-myMessageSection.addFact("Event:", "{EVENT}")
+myMessageSection.addFact("Job:", {JOB_NAME})
+myMessageSection.addFact("Event:", {EVENT})
 
 # Add text to the message.
 myTeamsMessage.text(f'''
