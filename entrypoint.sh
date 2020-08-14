@@ -55,7 +55,7 @@ myMessageSection.addFact("Event:", EVENT)
 myTeamsMessage.text(f'''
 ''')
 myTeamsMessage.color("Red")
-myTeamsMessage.addLinkButton("Go to workflow", "https://github.com/"+REPOSITORY_URL+"/actions/runs/"+RUN_ID)
+myTeamsMessage.addLinkButton("Go to workflow", "https://github.com/"+REPOSITORY_URL+"/actions/runs/"+RUN_ID+"?check_suite_focus=true")
 myTeamsMessage.addLinkButton("Go to pull request", "https://github.com/"+REPOSITORY_URL+"/pulls/"+PR_NUMBER)
 myTeamsMessage.send()
 EOF
