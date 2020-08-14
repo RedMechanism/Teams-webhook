@@ -42,7 +42,7 @@ myTeamsMessage.text(f'''
     <strong>Job</strong>: {JOB_NAME if JOB_NAME else 'Finish CI/CD'} \t
     <strong>Event</strong>: {EVENT} \t
     <strong>Actor</strong>: {ACTOR} \t
-    <strong>Date</strong>: {datetime.datetime.now().date()}
+    <strong>Date</strong>: datetime.datetime.now().date()
 ''')
 # myTeamsMessage.printme()
 
