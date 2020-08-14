@@ -39,12 +39,12 @@ myTeamsMessage.title(f'''CI/CD on {REPOSITORY}''')
 # Add text to the message.
 myTeamsMessage.text(f'''
     Status: <strong style="color: {color};">{CI_STATUS.upper() if CI_STATUS else ''}</strong> \t
-    Branch: <a href='http://google.com'>{BRANCH}</a> \t
+    Branch: <a href="www.google.com">Prac</a> \t
     Event: {EVENT} \t
     Workflow: {WORK_FLOW} \t
     Actor: {ACTOR} \t
     Job: {JOB_NAME if JOB_NAME else 'Finish CI/CD'} \t
-    Date: {datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")}
+    Date: {datetime.utcnow()}
 ''')
 # myTeamsMessage.printme()
 
