@@ -57,7 +57,7 @@ myTeamsMessage.text(f'''
 myTeamsMessage.color("Red")
 print(REPOSITORY_URL)
 print(PR_NUMBER)
-if PR_NUMBER not None:
+if PR_NUMBER is not None:
     myTeamsMessage.addLinkButton("PR_REF", "https://github.com/"+REPOSITORY+"/pull/"+PR_NUMBER)
 #myTeamsMessage.addLinkButton("Google", "https://github.com/rveachkc/pymsteams/")
 myTeamsMessage.send()
