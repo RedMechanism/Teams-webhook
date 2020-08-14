@@ -55,7 +55,7 @@ myMessageSection.addFact("Event:", EVENT)
 myTeamsMessage.text(f'''
 ''')
 myTeamsMessage.color("Red")
-myTeamsMessage.addLinkButton("PR_REF", "https://github.com/"+REPOSITORY_URL+"/pull/"+PR_NUMBER)
+myTeamsMessage.addLinkButton("Go to pull request", "https://github.com/"+REPOSITORY_URL+"/pull/"+PR_NUMBER)
 #myTeamsMessage.addLinkButton("Google", "https://github.com/rveachkc/pymsteams/")
 myTeamsMessage.send()
 EOF
