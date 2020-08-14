@@ -47,7 +47,7 @@ myMessageSection.activityImage("https://github.com/"+ACTOR+".png")
 myMessageSection.activityText(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 # Facts are key value pairs displayed in a list.
-myMessageSection.addFact("Status:", "<strong style='color: '"+color"';>{CI_STATUS.upper() if CI_STATUS else ''}</strong>")
+myMessageSection.addFact("Status:", "<strong style='color: "+color"';>{CI_STATUS.upper() if CI_STATUS else ''}</strong>")
 myMessageSection.addFact("Job:", JOB_NAME)
 myMessageSection.addFact("Event:", EVENT)
 
