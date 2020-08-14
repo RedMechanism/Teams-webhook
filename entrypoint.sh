@@ -47,7 +47,7 @@ myMessageSection.activityImage("https://github.com/"+ACTOR+".png")
 myMessageSection.activityText(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 # Facts are key value pairs displayed in a list.
-myMessageSection.addFact("Status:", "<strong style='color: %s';>{CI_STATUS.upper() if CI_STATUS else ''}</strong>" % color)
+myMessageSection.addFact("Status:", "<strong style='color: %s';>%s</strong>" % color, CI_STATUS.upper() if CI_STATUS else '')
 myMessageSection.addFact("Job:", JOB_NAME)
 myMessageSection.addFact("Event:", EVENT)
 
@@ -55,10 +55,7 @@ myMessageSection.addFact("Event:", EVENT)
 myTeamsMessage.text(f'''
 ''')
 myTeamsMessage.color("Red")
-print(REPOSITORY_URL)
-print(PR_NUMBER)
-if PR_NUMBER is not None:
-    myTeamsMessage.addLinkButton("PR_REF", "https://github.com/"+REPOSITORY_URL+"/pull/"+PR_NUMBER)
+myTeamsMessage.addLinkButton("PR_REF", "https://github.com/"+REPOSITORY_URL+"/pull/"+PR_NUMBER)
 #myTeamsMessage.addLinkButton("Google", "https://github.com/rveachkc/pymsteams/")
 myTeamsMessage.send()
 EOF
