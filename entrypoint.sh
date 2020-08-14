@@ -4,7 +4,7 @@ cat << EOF > ms_teams_notification.py
 #!/usr/bin/python3
 import pymsteams
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # You must create the connectorcard object with the Microsoft Webhook URL
 
@@ -44,7 +44,8 @@ myTeamsMessage.addSection(myMessageSection)
 myMessageSection.activityTitle("On branch: "+BRANCH)
 myMessageSection.activitySubtitle("Triggered by: "+ACTOR)
 myMessageSection.activityImage("https://github.com/"+ACTOR+".png")
-myMessageSection.activityText(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+JST_time = datetime.now() + timedelta(hours = 9)
+myMessageSection.activityText(JST_time.strftime("%Y-%m-%d %H:%M:%S"))
 
 # Facts are key value pairs displayed in a list.
 myMessageSection.addFact("Status:", "<strong style='color: {textcolor}';>{Result}</strong>".format(textcolor = color, Result = CI_STATUS.upper()))
