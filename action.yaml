@@ -1,5 +1,6 @@
-name: 'Send Messages'
-description: 'Send messages into MSTeam'
+
+name: 'MS teams webhook'
+description: 'Send CI/CD notifications to MS teams'
 
 runs:
   using: 'docker'
