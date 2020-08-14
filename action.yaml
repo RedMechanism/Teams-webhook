@@ -1,5 +1,5 @@
 
-name: 'MS teams webhook'
+name: 'DevOps MS teams webhook'
 description: 'Send CI/CD notifications to MS teams'
 
 runs:
