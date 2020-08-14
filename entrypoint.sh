@@ -43,12 +43,12 @@ myTeamsMessage.title(f'''{REPOSITORY_NAME}''')
 myTeamsMessage.addSection(myMessageSection)
 # Activity Elements
 myMessageSection.activityTitle("On branch: ")
-myMessageSection.activitySubtitle("Triggered by: {ACTOR}")
-myMessageSection.activityImage("https://github.com/{ACTOR}.png")
+myMessageSection.activitySubtitle("Triggered by: ACTOR")
+myMessageSection.activityImage("https://github.com/"+ACTOR+".png")
 myMessageSection.activityText(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 # Facts are key value pairs displayed in a list.
-myMessageSection.addFact("Status:", r"<strong style='color: {color};'>{CI_STATUS.upper() if CI_STATUS else ''}</strong>")
+myMessageSection.addFact("Status:", "<strong style='color: "+color'";>{CI_STATUS.upper() if CI_STATUS else ''}</strong>")
 myMessageSection.addFact("Job:", JOB_NAME)
 myMessageSection.addFact("Event:", EVENT)
 
@@ -58,7 +58,8 @@ myTeamsMessage.text(f'''
 myTeamsMessage.color("Red")
 print(REPOSITORY_URL)
 print(PR_NUMBER)
-#myTeamsMessage.addLinkButton("PR_REF", "https://github.com/"+REPOSITORY+"/pull/"+PR_NUMBER)
+if PR_NUMBER!=NULL:
+    myTeamsMessage.addLinkButton("PR_REF", "https://github.com/"+REPOSITORY+"/pull/"+PR_NUMBER)
 #myTeamsMessage.addLinkButton("Google", "https://github.com/rveachkc/pymsteams/")
 myTeamsMessage.send()
 EOF
