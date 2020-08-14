@@ -17,7 +17,7 @@ BRANCH = os.getenv('BRANCH', None)
 JOB_NAME = os.getenv('JOB_NAME', None)
 ACTOR = os.getenv('ACTOR', None)
 PR_NUMBER = os.getenv('PR_NUMBER', None)
-
+RUN_ID = os.getenv('RUN_ID', None)
 if WEB_HOOK_URL is None:
     print("Please set WEB_HOOK_URL env")
     exit(1)
@@ -55,8 +55,8 @@ myMessageSection.addFact("Event:", EVENT)
 myTeamsMessage.text(f'''
 ''')
 myTeamsMessage.color("Red")
-myTeamsMessage.addLinkButton("Go to pull request", "https://github.com/"+REPOSITORY_URL+"/pull/"+PR_NUMBER)
-#myTeamsMessage.addLinkButton("Google", "https://github.com/rveachkc/pymsteams/")
+myTeamsMessage.addLinkButton("Go to workflow", "https://github.com/"+REPOSITORY_URL+"/actions/runs/"+RUN_ID)
+myTeamsMessage.addLinkButton("Go to pull request", "https://github.com/"+REPOSITORY_URL+"/pulls/"+PR_NUMBER)
 myTeamsMessage.send()
 EOF
 
