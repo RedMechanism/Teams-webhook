@@ -1,15 +1,6 @@
 name: 'Send Messages'
 description: 'Send messages into MSTeam'
-inputs:
-  which-team:  # id of input
-    description: 'Which team you want to send'
-    required: false
-    default: 'Dsoft Team'
-outputs:
-  time: # id of output
-    description: 'Messages were sent'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.which-team }}
