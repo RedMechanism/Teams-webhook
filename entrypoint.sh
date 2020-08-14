@@ -41,13 +41,13 @@ myTeamsMessage.title(f'''{REPOSITORY_NAME}''')
 
 myTeamsMessage.addSection(myMessageSection)
 # Activity Elements
-myMessageSection.activityTitle("On branch: ")
+myMessageSection.activityTitle("On branch: "+BRANCH)
 myMessageSection.activitySubtitle("Triggered by: ACTOR")
 myMessageSection.activityImage("https://github.com/"+ACTOR+".png")
 myMessageSection.activityText(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 # Facts are key value pairs displayed in a list.
-myMessageSection.addFact("Status:", "<strong style='color: "+color+"';>{CI_STATUS.upper() if CI_STATUS else ''}</strong>")
+myMessageSection.addFact("Status:", "<strong style='color: %s';>{CI_STATUS.upper() if CI_STATUS else ''}</strong>" % age)
 myMessageSection.addFact("Job:", JOB_NAME)
 myMessageSection.addFact("Event:", EVENT)
 
