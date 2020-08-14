@@ -59,4 +59,4 @@ myTeamsMessage.send()
 EOF
 
 echo $which-team
-python3 end_message.py
+python3 send_message.py
