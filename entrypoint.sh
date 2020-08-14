@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cat << EOF > send_message.py
+cat << EOF > ms_teams_notification.py
 #!/usr/bin/python3
 import pymsteams
 import os
@@ -60,5 +60,4 @@ myTeamsMessage.addLinkButton("Go to pull request", "https://github.com/"+REPOSIT
 myTeamsMessage.send()
 EOF
 
-echo $which-team
-python3 send_message.py
+python3 ms_teams_notification.py
