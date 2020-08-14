@@ -24,12 +24,6 @@ if WEB_HOOK_URL is None:
 
 myTeamsMessage = pymsteams.connectorcard(WEB_HOOK_URL)
 
-'''
-Repository: awl-inc/awl-box-manager-website
-Workflow: PHP CI
-Duration: 27.0 seconds
-Finished: 2020-02-27 02:47:13 UTC
-'''
 color = None
 
 if CI_STATUS.lower() == 'failure':
@@ -41,16 +35,16 @@ elif CI_STATUS.lower() == 'success':
 else:
     color = 'blue'
 
-myTeamsMessage.title(f'''Run Github Action CI/CD for {BRANCH}''')
+myTeamsMessage.title(f'''CI/CD on {REPOSITORY}''')
 # Add text to the message.
 myTeamsMessage.text(f'''
     Status: <strong style="color: {color};">{CI_STATUS.upper() if CI_STATUS else ''}</strong> \t
-    Repository: {REPOSITORY} \t
+    Branch: <a href='http://google.com' style="color: {color};>{BRANCH}</a> \t
     Event: {EVENT} \t
     Workflow: {WORK_FLOW} \t
-    Author: {ACTOR} \t
+    Actor: {ACTOR} \t
     Job: {JOB_NAME if JOB_NAME else 'Finish CI/CD'} \t
-    Finished: {datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")} UTC
+    Completion time: {datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S", time() + 9*60*60)} JST
 ''')
 # myTeamsMessage.printme()
 
