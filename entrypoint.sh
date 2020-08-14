@@ -15,6 +15,7 @@ CI_STATUS = os.getenv('CI_STATUS', '')
 BRANCH = os.getenv('BRANCH', None)
 JOB_NAME = os.getenv('JOB_NAME', None)
 ACTOR = os.getenv('ACTOR', None)
+PR_REF = os.getenv('PR_REF', None)
 
 
 if WEB_HOOK_URL is None:
@@ -34,19 +35,29 @@ elif CI_STATUS.lower() == 'success':
 else:
     color = 'blue'
 
-myTeamsMessage.title(f'''CI/CD on {REPOSITORY}''')
+myMessageSection = pymsteams.cardsection()
+
+myTeamsMessage.title(f'''{REPOSITORY}''')
+
+myTeamsMessage.addSection(myMessageSection)
+# Activity Elements
+myMessageSection.activityTitle("On branch: ")
+myMessageSection.activitySubtitle("Triggered by: {ACTOR}")
+myMessageSection.activityImage("https://github.com/{ACTOR}.png")
+myMessageSection.activityText(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+# Facts are key value pairs displayed in a list.
+myMessageSection.addFact("Status: ", "<strong style="color: {color};">{CI_STATUS.upper() if CI_STATUS else ''}</strong>")
+myMessageSection.addFact("Job:", "{JOB_NAME}")
+myMessageSection.addFact("Event:", "{EVENT}")
+
 # Add text to the message.
 myTeamsMessage.text(f'''
-    <strong>Status</strong>: <strong style="color: {color};">{CI_STATUS.upper() if CI_STATUS else ''}</strong> \t
-    <strong>Branch</strong>: <a href="www.google.com">Prac</a> \t
-    <strong>Job</strong>: {JOB_NAME if JOB_NAME else 'Finish CI/CD'} \t
-    <strong>Event</strong>: {EVENT} \t
-    <strong>Actor</strong>: {ACTOR} \t
-    <strong>Date</strong>: {datetime.date.today()}
 ''')
-# myTeamsMessage.printme()
+myTeamsMessage.color("Red")
 
-# send the message.
+myTeamsMessage.addLinkButton("PR_REF", "https://github.com/rveachkc/pymsteams/")
+myTeamsMessage.addLinkButton("Google", "https://github.com/rveachkc/pymsteams/")
 myTeamsMessage.send()
 EOF
 
