@@ -44,7 +44,7 @@ myTeamsMessage.text(f'''
     Workflow: {WORK_FLOW} \t
     Actor: {ACTOR} \t
     Job: {JOB_NAME if JOB_NAME else 'Finish CI/CD'} \t
-    Completion time: {datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S", time() + 9*60*60)} JST
+    Date: {datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")}
 ''')
 # myTeamsMessage.printme()
 
