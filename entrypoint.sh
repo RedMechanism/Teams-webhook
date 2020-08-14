@@ -9,7 +9,8 @@ from datetime import datetime
 # You must create the connectorcard object with the Microsoft Webhook URL
 
 WEB_HOOK_URL = os.getenv('WEB_HOOK_URL', None)
-REPOSITORY = os.getenv('REPOSITORY', None)
+REPOSITORY_NAME = os.getenv('REPOSITORY_NAME', None)
+REPOSITORY_URL = os.getenv('REPOSITORY_URL', None)
 EVENT = os.getenv('EVENT', None)
 CI_STATUS = os.getenv('CI_STATUS', '')
 BRANCH = os.getenv('BRANCH', None)
@@ -55,7 +56,7 @@ myMessageSection.addFact("Event:", EVENT)
 myTeamsMessage.text(f'''
 ''')
 myTeamsMessage.color("Red")
-print(REPOSITORY)
+print(REPOSITORY_URL)
 print(PR_NUMBER)
 #myTeamsMessage.addLinkButton("PR_REF", "https://github.com/"+REPOSITORY+"/pull/"+PR_NUMBER)
 #myTeamsMessage.addLinkButton("Google", "https://github.com/rveachkc/pymsteams/")
