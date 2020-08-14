@@ -56,7 +56,7 @@ myTeamsMessage.text(f'''
 ''')
 myTeamsMessage.color("Red")
 
-myTeamsMessage.addLinkButton("PR_REF", "https://github.com/"{REPOSITORY}"/pull/"{PR_NUMBER})
+myTeamsMessage.addLinkButton("PR_REF", "https://github.com/"+{REPOSITORY}+"/pull/"+{PR_NUMBER})
 myTeamsMessage.addLinkButton("Google", "https://github.com/rveachkc/pymsteams/")
 myTeamsMessage.send()
 EOF
