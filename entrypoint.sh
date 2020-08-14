@@ -15,7 +15,7 @@ CI_STATUS = os.getenv('CI_STATUS', '')
 BRANCH = os.getenv('BRANCH', None)
 JOB_NAME = os.getenv('JOB_NAME', None)
 ACTOR = os.getenv('ACTOR', None)
-PR_REF = os.getenv('PR_REF', None)
+PR_NUMBER = os.getenv('PR_REF', None)
 
 
 if WEB_HOOK_URL is None:
@@ -56,7 +56,7 @@ myTeamsMessage.text(f'''
 ''')
 myTeamsMessage.color("Red")
 
-myTeamsMessage.addLinkButton("PR_REF", "https://github.com/rveachkc/pymsteams/")
+myTeamsMessage.addLinkButton("PR_REF", "https://github.com/{REPOSITORY}/pull/{PR_NUMBER}")
 myTeamsMessage.addLinkButton("Google", "https://github.com/rveachkc/pymsteams/")
 myTeamsMessage.send()
 EOF
