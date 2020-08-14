@@ -18,7 +18,6 @@ JOB_NAME = os.getenv('JOB_NAME', None)
 ACTOR = os.getenv('ACTOR', None)
 PR_NUMBER = os.getenv('PR_NUMBER', None)
 
-
 if WEB_HOOK_URL is None:
     print("Please set WEB_HOOK_URL env")
     exit(1)
@@ -48,7 +47,7 @@ myMessageSection.activityImage("https://github.com/"+ACTOR+".png")
 myMessageSection.activityText(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 # Facts are key value pairs displayed in a list.
-myMessageSection.addFact("Status:", "<strong style='color: "+color'";>{CI_STATUS.upper() if CI_STATUS else ''}</strong>")
+myMessageSection.addFact("Status:", "<strong style='color: '"+color"';>{CI_STATUS.upper() if CI_STATUS else ''}</strong>")
 myMessageSection.addFact("Job:", JOB_NAME)
 myMessageSection.addFact("Event:", EVENT)
 
