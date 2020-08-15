@@ -8,13 +8,13 @@ from datetime import datetime, timedelta
 
 # You must create the connectorcard object with the Microsoft Webhook URL
 
-WEB_HOOK_URL = os.getenv('WEB_HOOK_URL', None)
+WEB_HOOK_URL = os.getenv('webhook_url', None)
 REPOSITORY_NAME = os.getenv('REPOSITORY_NAME', None)
 REPOSITORY_URL = os.getenv('REPOSITORY_URL', None)
 EVENT = os.getenv('EVENT', None)
-JOB_STATUS = os.getenv('JOB_STATUS', '')
+JOB_STATUS = os.getenv('job_status', '')
 BRANCH = os.getenv('BRANCH', None)
-JOB_NAME = os.getenv('JOB_NAME', None)
+JOB_NAME = os.getenv('job_name', None)
 ACTOR = os.getenv('ACTOR', None)
 PR_NUMBER = os.getenv('PR_NUMBER', None)
 RUN_ID = os.getenv('RUN_ID', None)
