@@ -5,13 +5,10 @@ description: 'Send CI/CD notifications to MS teams'
 inputs:
   webhook_url:
     description: 'MS teams incoming webhook url'
-    required: true
   job_status:
     description: 'The current status of the job. Possible values are success, failure, or cancelled'
-    required: true
   job_name:
     description: 'The name of the current job'
-    required: true
   REPOSITORY_NAME: 
     default: ${{ github.event.repository.name }}
   REPOSITORY_URL: 
