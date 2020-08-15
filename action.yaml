@@ -4,4 +4,4 @@ description: 'Send CI/CD notifications to MS teams'
 
 runs:
   using: 'docker'
-  image: awlaienginedevelopment.azurecr.io/ms-teams-webhook:v1.0
+  image: 'docker://awlaienginedevelopment.azurecr.io/ms-teams-webhook:v1.0'
