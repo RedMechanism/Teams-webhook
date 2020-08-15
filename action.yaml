@@ -30,3 +30,5 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    webhook_url: ${{ inputs.which-team }}
