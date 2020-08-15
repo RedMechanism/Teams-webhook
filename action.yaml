@@ -31,4 +31,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    webhook_url: ${{ inputs.which-team }}
+    webhook_url: ${{ inputs.webhook_url }}
+    job_status: ${{ inputs.job_status }}
+    job_name: ${{ inputs.job_name }}
