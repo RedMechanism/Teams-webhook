@@ -14,7 +14,6 @@ inputs:
     required: true
 
 env:
-  WEB_HOOK_URL: ${{ secrets.WEBHOOK }}
   REPOSITORY_NAME: ${{ github.event.repository.name }}
   REPOSITORY_URL: ${{ github.repository }}
   EVENT: ${{ github.event_name }}  
