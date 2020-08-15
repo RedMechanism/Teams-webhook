@@ -5,14 +5,3 @@ description: 'Send CI/CD notifications to MS teams'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    WEB_HOOK_URL: ${{ secrets.WEBHOOK }}
-    REPOSITORY_NAME: ${{ github.event.repository.name }}
-    REPOSITORY_URL: ${{ github.repository }}
-    EVENT: ${{ github.event_name }}  
-    BRANCH: ${{github.event.pull_request.head.ref}}
-    ACTOR: ${{ github.actor }}
-    PR_NUMBER: ${{ github.event.pull_request.number }}
-    RUN_ID: ${{ github.run_id }}
-    JOB_STATUS: ${{ job.status }}
-    JOB_NAME: ${{ github.job }}
