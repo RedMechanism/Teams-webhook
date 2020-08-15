@@ -9,15 +9,15 @@ from datetime import datetime, timedelta
 # You must create the connectorcard object with the Microsoft Webhook URL
 
 WEB_HOOK_URL = os.getenv('webhook_url', None)
-REPOSITORY_NAME = os.getenv('REPOSITORY_NAME', None)
-REPOSITORY_URL = os.getenv('REPOSITORY_URL', None)
-EVENT = os.getenv('EVENT', None)
+REPOSITORY_NAME = os.getenv('repository_name', None)
+REPOSITORY_URL = os.getenv('repository_url', None)
+EVENT = os.getenv('event', None)
 JOB_STATUS = os.getenv('job_status', '')
-BRANCH = os.getenv('BRANCH', None)
+BRANCH = os.getenv('branch', None)
 JOB_NAME = os.getenv('job_name', None)
-ACTOR = os.getenv('ACTOR', None)
-PR_NUMBER = os.getenv('PR_NUMBER', None)
-RUN_ID = os.getenv('RUN_ID', None)
+ACTOR = os.getenv('actor', None)
+PR_NUMBER = os.getenv('pr_number', None)
+RUN_ID = os.getenv('run_id', None)
 if WEB_HOOK_URL is None:
     print("Please set WEB_HOOK_URL env")
     exit(1)
