@@ -4,12 +4,15 @@ description: 'Send CI/CD notifications to MS teams'
 
 inputs:
   webhook_url:
+    default: ${{ secrets.WEBHOOK }}
     description: 'MS teams incoming webhook url'
     required: true
   job_status:
+    default: ${{ job.status }}
     description: 'The current status of the job. Possible values are success, failure, or cancelled'
     required: true
   job_name:
+    default: ${{ github.job }}
     description: 'The name of the current job'
     required: true
   REPOSITORY_NAME: 
