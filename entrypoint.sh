@@ -12,7 +12,7 @@ WEB_HOOK_URL = os.getenv('WEB_HOOK_URL', None)
 REPOSITORY_NAME = os.getenv('REPOSITORY_NAME', None)
 REPOSITORY_URL = os.getenv('REPOSITORY_URL', None)
 EVENT = os.getenv('EVENT', None)
-CI_STATUS = os.getenv('CI_STATUS', '')
+JOB_STATUS = os.getenv('JOB_STATUS', '')
 BRANCH = os.getenv('BRANCH', None)
 JOB_NAME = os.getenv('JOB_NAME', None)
 ACTOR = os.getenv('ACTOR', None)
@@ -26,11 +26,11 @@ myTeamsMessage = pymsteams.connectorcard(WEB_HOOK_URL)
 
 color = None
 
-if CI_STATUS.lower() == 'failure':
+if JOB_STATUS.lower() == 'failure':
     color = 'red'
-elif CI_STATUS.lower() == 'cancelled':
+elif JOB_STATUS.lower() == 'cancelled':
     color = 'gray'
-elif CI_STATUS.lower() == 'success':
+elif JOB_STATUS.lower() == 'success':
     color = 'green'
 else:
     color = 'blue'
