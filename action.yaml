@@ -1,6 +1,6 @@
 
-name: 'DevOps MS teams webhook'
-description: 'Send CI/CD notifications to MS teams'
+name: 'DevOps MS Teams webhook'
+description: 'Send CI/CD notifications to MS Teams'
 
 runs:
   using: 'docker'
