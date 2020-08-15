@@ -48,7 +48,7 @@ JST_time = datetime.now() + timedelta(hours = 9)
 myMessageSection.activityText(JST_time.strftime("%Y-%m-%d %H:%M:%S"))
 
 # Facts are key value pairs displayed in a list.
-myMessageSection.addFact("Status:", "<strong style='color: {textcolor}';>{Result}</strong>".format(textcolor = color, Result = CI_STATUS.upper()))
+myMessageSection.addFact("Status:", "<strong style='color: {textcolor}';>{Result}</strong>".format(textcolor = color, Result = JOB_STATUS.upper()))
 myMessageSection.addFact("Job:", JOB_NAME)
 myMessageSection.addFact("Event:", EVENT)
 
