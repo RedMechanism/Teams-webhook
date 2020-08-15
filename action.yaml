@@ -3,5 +3,6 @@ name: 'DevOps MS teams webhook'
 description: 'Send CI/CD notifications to MS teams'
 
 runs:
+  name: Preparing webhook
   using: 'docker'
   image: 'docker://awlaienginedevelopment.azurecr.io/ms-teams-webhook:v1.0'
