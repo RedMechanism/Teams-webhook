@@ -12,15 +12,20 @@ inputs:
   job_name:
     description: 'The name of the current job'
     required: true
-
-env:
-  REPOSITORY_NAME: ${{ github.event.repository.name }}
-  REPOSITORY_URL: ${{ github.repository }}
-  EVENT: ${{ github.event_name }}  
-  BRANCH: ${{github.event.pull_request.head.ref}}
-  ACTOR: ${{ github.actor }}
-  PR_NUMBER: ${{ github.event.pull_request.number }}
-  RUN_ID: ${{ github.run_id }}
+  REPOSITORY_NAME: 
+    default: ${{ github.event.repository.name }}
+  REPOSITORY_URL: 
+    default: ${{ github.repository }}
+  EVENT: 
+    default: ${{ github.event_name }}  
+  BRANCH: 
+    default: ${{github.event.pull_request.head.ref}}
+  ACTOR: 
+    default: ${{ github.actor }}
+  PR_NUMBER: 
+    default: ${{ github.event.pull_request.number }}
+  RUN_ID: 
+    default: ${{ github.run_id }}
 
 runs:
   using: 'docker'
