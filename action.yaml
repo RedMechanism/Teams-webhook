@@ -2,6 +2,27 @@
 name: 'DevOps MS teams webhook'
 description: 'Send CI/CD notifications to MS teams'
 
+inputs:
+  webhook_url:
+    description: 'MS teams incoming webhook url'
+    required: true
+  job_status:
+    description: 'The current status of the job. Possible values are success, failure, or cancelled'
+    required: true
+  job_name:
+    description: 'The name of the current job'
+    required: true
+
+env:
+  WEB_HOOK_URL: ${{ secrets.WEBHOOK }}
+  REPOSITORY_NAME: ${{ github.event.repository.name }}
+  REPOSITORY_URL: ${{ github.repository }}
+  EVENT: ${{ github.event_name }}  
+  BRANCH: ${{github.event.pull_request.head.ref}}
+  ACTOR: ${{ github.actor }}
+  PR_NUMBER: ${{ github.event.pull_request.number }}
+  RUN_ID: ${{ github.run_id }}
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
