@@ -8,8 +8,6 @@ inputs:
       required: true
       
 runs:
-  using: "composite"
-  steps: 
-    - run: docker run awlaienginedevelopment.azurecr.io/ms-teams-webhook:${{ inputs.cpu}}_v1.0
-      shell: bash
+  using: 'Docker'
+  image: docker://awlaienginedevelopment.azurecr.io/ms-teams-webhook:${{ inputs.cpu}}_v1.0
  
