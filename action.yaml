@@ -2,6 +2,14 @@
 name: 'DevOps MS Teams webhook'
 description: 'Send CI/CD notifications to MS Teams'
 
+inputs:
+    description: 'Determines which Docker image to use based on CPU architecture'
+    required: true
+
 runs:
   using: 'docker'
-  image: 'docker://awlaienginedevelopment.azurecr.io/ms-teams-webhook:v1.0'
+  if: ${{ inputs.webhook }} == 'amd64'
+    image: 'docker://awlaienginedevelopment.azurecr.io/ms-teams-webhook:amd64_v1.0'
+  if: ${{ inputs.webhook }} == 'arm64'
+    image: 'docker://awlaienginedevelopment.azurecr.io/ms-teams-webhook:arm64_v1.0'
+ 
