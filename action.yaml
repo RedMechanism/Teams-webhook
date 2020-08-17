@@ -9,5 +9,5 @@ inputs:
       
 runs:
   using: 'docker'
-  image: 'docker://awlaienginedevelopment.azurecr.io/ms-teams-webhook:${{ inputs.webhook }}_v1.0'
+  image: 'docker://awlaienginedevelopment.azurecr.io/ms-teams-webhook:'${{ inputs.webhook }}'_v1.0'
  
