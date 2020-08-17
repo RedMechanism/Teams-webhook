@@ -8,6 +8,8 @@ inputs:
       required: true
       
 runs:
-  using: 'composite'
-  image: echo ${{ inputs.cpu}}
+  using: "composite"
+  steps: 
+    - run: echo ${{ inputs.cpu}}
+      shell: bash
  
