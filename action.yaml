@@ -3,8 +3,9 @@ name: 'DevOps MS Teams webhook'
 description: 'Send CI/CD notifications to MS Teams'
 
 inputs:
-    description: 'Determines which Docker image to use based on CPU architecture'
-    required: true
+    cpu: 
+        description: 'Determines which Docker image to use based on CPU architecture'
+        required: true
 
 runs:
   using: 'docker'
