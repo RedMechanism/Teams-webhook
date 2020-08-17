@@ -7,7 +7,7 @@ inputs:
       description: 'Determines which Docker image to use based on CPU architecture. Possible values: arm64, arm64'
       required: true
 env:
-    mike: docker://awlaienginedevelopment.azurecr.io/ms-teams-webhook:${{ inputs.cpu}}_v1.0
+    mike: ${{ inputs.cpu}}
 runs:
   using: 'Docker'
   image: $mike
