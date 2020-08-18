@@ -9,5 +9,5 @@ inputs:
 
 runs:
   using: 'Docker'
-  image: 'docker://awlaienginedevelopment.azurecr.io/ms-teams-webhook:amd64_v1.0'
+  image: 'Dockerfile'
  
